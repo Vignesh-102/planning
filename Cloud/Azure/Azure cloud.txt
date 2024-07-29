@@ -1,0 +1,19 @@
+Cloud computing -> Cloud computing is the delivery of computing services over the internet. 
+Computing services include common IT infrastructure such as virtual machines, storage, databases, 
+and networking. Cloud services also expand the traditional IT offerings to include things like 
+Internet of Things (IoT), machine learning (ML), and artificial intelligence (AI).
+
+cloud models -> 
+    Public cloud	Private cloud	Hybrid cloud 
+    Multi-cloud -> use multiple public cloud providers. Maybe you use different features from different 
+    cloud providers. Or maybe you started your cloud journey with one provider and are in the process
+    of migrating to a different provider. 
+
+Azure Arc
+Azure Arc is a set of technologies that helps manage your cloud environment. 
+Azure Arc can help manage your cloud environment, whether it's a public cloud solely on Azure, 
+a private cloud in your datacenter, a hybrid configuration, or even a multi-cloud environment running 
+on multiple cloud providers at once.
+
+Azure services:
+    Compute, Storage, Network, database, Web, Analytics , Management

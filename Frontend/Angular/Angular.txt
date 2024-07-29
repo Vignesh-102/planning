@@ -1,0 +1,422 @@
+Observer Pattern:
+  The observer pattern is a software design pattern in which an object, named the subject, 
+  maintains a list of its dependents, called observers, and notifies them automatically of 
+  any state changes, usually by calling one of their methods.
+
+  Angular uses the Observer pattern which simply means — Observable objects are registered, 
+  and other objects observe (in Angular using the subscribe method) them and take action 
+  when the observable object is acted on in some way.
+
+  They are similar to promises, but with some differences. Promises execute once and then are done. 
+  Observable continue to be observed after the event occurs. 
+  Observable can also be cancelled (you can stop observing an object during runtime). 
+  Promises cannot be cancelled — which makes sense, since you’re only executing the promise one time.
+
+  Observable are declarative — that is, you define a function for publishing values, but it is not 
+  executed until a consumer subscribes to it. The subscribed consumer then receives notifications 
+  until the function completes, or until they unsubscribe.
+
+  Observables are lazy Push collections of multiple values.
+
+ng build:
+    create static files(HTML, CSS, JS), that will be independent of angular CLI.
+    "ng build --prod" -> create minified and optimized file and done AOT compilation.
+ng serve:
+    starts development server
+    This command builds, deploy, serves and every time watches your code changes. if find any change 
+    in code it builds and serves that code automatically. 
+
+Interpolation:
+    Interpolation refers to embedding expressions into marked up text. 
+    By default, interpolation uses the double curly braces {{ and }} as delimiters.
+
+Property binding:
+    Property binding helps you set values for properties of HTML elements or directives. 
+    To bind to an element’s property, enclose it in square brackets [] which causes Angular 
+    to evaluate the right-hand side of the assignment as a dynamic expression.
+Template statements
+    Template statements are methods or properties that you can use in your HTML to respond to 
+    user events.
+
+Binding data props attrs events:
+    In an Angular template, a binding creates a live connection between view and the model and 
+    keeps them both in sync.
+        property: helps you set values for properties of HTML elements or directives.
+        attributes: helps you set values for attributes of HTML elements directly.
+        event: lets you listen for and respond to user actions such as keystrokes, mouse movements, 
+               clicks, and touches.
+        data: It’s a combination of property and event binding and helps you share data between 
+              components.
+
+template variables:
+    Template variables help you use data from one part of a template in another part of the template. 
+    Use template variables to perform tasks such as respond to user input or finely tune your 
+    application's forms.
+
+Input output:
+    @Input() and @Output() give a child component a way to communicate with its parent component.
+    @Input() lets a parent component update data in the child component. Conversely, @Output() lets 
+    the child send data to a parent component.
+
+Components:
+    Components are the main building block for Angular applications. Each component consists of:
+      An HTML template that declares what renders on the page
+      A TypeScript class that defines the behavior
+      A CSS selector that defines how the component is used in a template
+      Optionally, CSS styles applied to the template
+
+Template:
+    Each Angular template in your application is a section of HTML to include as a part of the page 
+    that the browser displays. An Angular HTML template renders a view, or user interface, in the 
+    browser, just like regular HTML, but with a lot more functionality.   
+    
+Modules:
+    Modules in Angular act like a container where we can group the components, directives, 
+    pipes, and services, related to the application.   
+
+Dependency injection:
+    Dependency injection, or DI, is one of the fundamental concepts in Angular. 
+    DI is wired into the Angular framework and allows classes with Angular decorators, such as 
+    Components, Directives, Pipes, and Injectables, to configure dependencies that they need.
+
+Services:
+    Services let you define code or functionalities that are then accessible and reusable in many 
+    other components in the Angular project. It also helps you with the abstraction of logic and data 
+    that is hosted independently but can be shared across other components.     
+
+Routing:
+    In a single-page app, you change what the user sees by showing or hiding portions of the display that 
+    correspond to particular components, rather than going out to the server to get a new page.    
+
+Directives:
+    add additional behavior to elements
+    NgClass Adds and removes a set of CSS classes.
+    NgStyle Adds and removes a set of HTML styles.
+    NgModel Adds two-way data binding to an HTML form element.
+    Attribute directives:
+        Attribute directives listen to and modify the behavior of other HTML elements, attributes, 
+        properties, and components.
+        NgClass -	Adds and removes a set of CSS classes.
+        NgStyle -	Adds and removes a set of HTML styles.
+        NgModel -	Adds two-way data binding to an HTML form element.
+    Structural directives:
+        Structural directives are responsible for HTML layout. They shape or reshape the DOM's 
+        structure, typically by adding, removing, and manipulating the host elements to which they 
+        are attached.
+        NgIf	Conditionally creates or disposes of subviews from the template.
+        NgFor	Repeat a node for each item in a list.
+        NgSwitch	A set of directives that switch among alternative views.
+
+Pipes:
+    Pipes are simple functions to use in template expressions to accept an input value and return a 
+    transformed value. 
+    DatePipe: Formats a date value according to locale rules.
+    UpperCasePipe: Transforms text to all upper case.
+    LowerCasePipe: Transforms text to all lower case.
+    CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.
+    DecimalPipe: Transforms a number into a string with a decimal point, formatted according to locale rules.
+    PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.
+    AsyncPipe: Subscribe and unsubscribe to an asynchronous source such as an observable.
+    JsonPipe: Display a component object property to the screen as JSON for debugging.
+
+Change detection:
+    Change detection is the process through which Angular checks to see whether your application state
+     has changed, and if any DOM needs to be updated. At a high level, Angular walks your components 
+     from top to bottom, looking for changes. Angular runs its change detection mechanism periodically 
+     so that changes to the data model are reflected in an application’s view. Change detection can be 
+     triggered either manually or through an asynchronous event (for example, a user interaction or an 
+     XMLHttpRequest completion).
+
+Template driven forms:
+    It is mainly used for creating simple form application.
+    It uses two-way data-binding (ngModel) to create and handle the form components.
+    NgForm - Creates a top-level FormGroup instance and binds it to a <form> element to track 
+             aggregated form value and validation status. As soon as you import FormsModule, this 
+             directive becomes active by default on all <form> tags. You don't need to add a special 
+             selector. 
+    <form #actorForm="ngForm"> -> The actorForm template variable is now a reference to the NgForm 
+                                  directive instance that governs the form as a whole.
+    <form (ngSubmit)="onSubmit()" #actorForm="ngForm">
+
+Reactive forms:
+    Reactive forms provide a model-driven approach to handling form inputs whose values change over time.
+    Reactive forms are built around observable streams, where form inputs and values are provided as streams 
+    of input values, which can be accessed synchronously.
+    valueChanges -> Through the valueChanges observable where you can listen for changes in the form's value in the template 
+                    using AsyncPipe or in the component class using the subscribe() method
+    value        -> With the value property, which gives you a snapshot of the current value
+    setValue()   ->  Reactive forms have methods to change a control's value programmatically, which gives you the flexibility to 
+                   update the value without user interaction.
+                   Set a new value for an individual control. The setValue() method strictly adheres to the structure of the 
+                   form group and replaces the entire value for the control.
+    patchValue() ->	Replace any properties defined in the object that have changed in the form model.
+                    The strict checks of the setValue() method help catch nesting errors in complex forms, 
+                    while patchValue() fails silently on those errors.
+    Form group   ->	Defines a form with a fixed set of controls that you can manage together. Form group basics 
+                    are discussed in this section. You can also nest form groups to create more complex forms.
+    Form array   ->	Defines a dynamic form, where you can add and remove controls at run time. You can also nest 
+                    form arrays to create more complex forms. 
+                    FormArray is an alternative to FormGroup for managing any number of unnamed controls. 
+    FormBuilder  -> Creating form control instances manually can become repetitive when dealing with multiple forms. 
+                    The FormBuilder service provides convenient methods for generating controls.
+    status       -> Access the current status of the form group instance through its status property.
+    Cross-field validation:
+        A cross-field validator is a custom validator that compares the values of different fields in a form and accepts or 
+        rejects them in combination.
+    Creating asynchronous validators:
+       Asynchronous validation happens after the synchronous validation, and is performed only if the synchronous validation 
+       is successful. After asynchronous validation begins, the form control enters a pending state. Inspect the control's 
+       pending property and use it to give visual feedback about the ongoing validation operation.
+    Optimizing performance of async validators -> You can delay updating the form validity by changing the updateOn property 
+                                                  from change (default) to submit or blur.
+                                                  <input [(ngModel)]="name" [ngModelOptions]="{updateOn: 'blur'}">
+    Interaction with native HTML form validation:
+        By default, Angular disables native HTML form validation by adding the novalidate attribute on the enclosing <form> 
+        and uses directives to match these attributes with validator functions in the framework. If you want to use native validation 
+        in combination with Angular-based validation, you can re-enable it with the ngNativeValidate directive.
+
+
+Router Events
+    The Angular Router raises events when it navigates from one route to another route. 
+    It raises several events such as NavigationStart, NavigationEnd, NavigationCancel, NavigationError, 
+    ResolveStart, etc.
+
+Route Guards;
+    In Angular, guards are special classes used to control and manage access to different parts of an 
+    application. They decide whether a user can navigate to a particular route or perform certain 
+    actions based on specific conditions, like checking if the user is logged in or has the necessary 
+    permissions. Guards act as gatekeepers, allowing or preventing access to different parts of the 
+    application, ensuring security and controlling the flow of navigation within the app.
+    Types of Route Guards:
+        CanActivate      - Determines if a route can be activated and allows navigation based on certain 
+                      conditions.
+        CanActivateChild - Similar to CanActivate but controls the activation of child routes.
+        CanDeactivate    - Checks if a route can be deactivated, often used to confirm navigation away 
+                        from a route.
+            Use Case — Preventing Unsaved Changes:
+                            Consider a form-editing feature within an application where users can 
+                            modify certain data. You want to ensure that users are prompted with a 
+                            confirmation before leaving the editing page if they’ve made changes that 
+                            haven’t been saved.
+        CanLoad          - Prevents a module from being loaded lazily until certain conditions are met.
+            Use Case — Role-Based Module Loading:
+                 Consider a scenario where your application has a premium feature module that 
+                 should only be loaded for users with a specific subscription or premium status.
+
+
+Lazy loading
+    Lazy loading is a technique in Angular that allows you to load JavaScript components asynchronously 
+    when a specific route is activated. It improves the application load time speed by splitting the 
+    application into several bundles. The bundles are loaded as required when the user navigates through 
+    the app.
+
+Dependency Injection:
+   Dependency Injection (DI) is a design pattern that creates the dependencies of a class and 
+   provides those objects to the class when required. Angular being a nice framework, provides a 
+   built-in dependency injection mechanism that creates and provides a runtime version of a dependency 
+   value using dependency injectors.
+
+Services:
+    Components shouldn’t fetch or save data directly and shouldn’t knowingly present fake data. 
+    They should focus on presenting data and delegate data access to a service. Service is where all 
+    the remote API calls exist to retrieve and provide data to components.
+
+    HTTP services: HttpClient is Angular's mechanism for communicating with a remote server over HTTP.
+    All HttpClient methods return an RxJS Observable of something.
+        The HttpClient.put() method takes three parameters:
+                 (i) The URL, (ii) The data to update, (iii) Options
+
+
+Lifecycle hooks:
+    A component instance has a lifecycle that starts when Angular instantiates the component class and 
+    renders the component view along with its child views. The lifecycle continues with change detection, 
+    as Angular checks to see when data-bound properties change, and updates both the view and the 
+    component instance as needed. The lifecycle ends when Angular destroys the component instance and 
+    removes its rendered template from the DOM. Directives have a similar lifecycle, as Angular creates, 
+    updates, and destroys instances in the course of execution.
+    Your application can use lifecycle hook methods to tap into key events in the lifecycle of a 
+    component or directive to initialize new instances, initiate change detection when needed, respond 
+    to updates during change detection, and clean up before deletion of instances.
+    ngOnChanges -> If your component has no inputs or you use it without providing any inputs, the 
+                   framework will not call ngOnChanges().
+    ngOnInit -> Initialize the directive or component after Angular first displays the data-bound 
+                properties and sets the directive or component's input properties
+    ngDoCheck 
+    ngAfterContentInit
+    ngAfterContentChecked
+    ngAfterViewInit -> Respond after Angular initializes the component's views and child views, or 
+                       the view that contains the directive.
+    ngAfterViewChecked
+    ngOnDestroy
+
+state management:
+    Application state management is the process of maintaining knowledge of an application's 
+    inputs across multiple related data flows that form a complete business transaction -- or a 
+    session -- to understand the condition of the application at any given moment
+
+    Managing state in frontend applications: 
+        This data can range from server responses gotten from HTTP request, to form input data and 
+        user routes.
+        NgRx:
+            NgRx is a group of Angular libraries for reactive extensions and state management. 
+            It makes Angular development easier by simplifying the application’s state in objects and 
+            enforcing unidirectional data flow.
+            NgRx Store:
+              The NgRx Store is a Redux-inspired state management system that enables you to use observables 
+              to manage state in an Angular application. The primary advantage to using the NgRx Store is the 
+              ability to store all state in a single tree that is accessible from any part of the application.
+              The state is never changed directly. Instead, the reducer always creates a new state. 
+              This is known as immutability.
+              Store state -> A store is basically a JavaScript object that holds data we’ll be using in our 
+                             application.
+              Actions -> Actions are methods dispatched by the component when an event is called.
+                         Here you can define a type and also the payload it will be sending:
+                           const ChangeNameAction = {
+                            type: "Change Name",
+                            name: "Wisdom"
+                           }
+              Reducers -> The createReducer method handles state transitions.
+                          To access the state, we have to import the initial state into the reducer 
+                          file. To trigger an action, we use the on event, which takes the name of the 
+                          action as a parameter:
+                           const _reducer = createReducer(
+                             initialState,
+                             on(nameOfAction, (state, action) => {
+                               return {
+                                 ...state,
+                                 someState: action.anyState
+                               }
+                             })
+                            )
+                 actions only tell what to do, but they don't tell how to do, so reducers are the pure 
+                 functions that take the current state and action and return the new state and tell the 
+                 store how to do.
+            Effects:
+              In a service-based Angular application, components are responsible for interacting with external 
+              resources directly through services. Instead, effects provide a way to interact with those services 
+              and isolate them from the components. Effects are where you handle tasks such as fetching data, 
+              long-running tasks that produce multiple events, and other external interactions where your 
+              components don't need explicit knowledge of these interactions.
+            Entity and class instances:
+              Entity promotes the use of plain JavaScript objects when managing collections. 
+              ES6 class instances will be transformed into plain JavaScript objects when entities are 
+              managed in a collection. This provides you with some assurances when managing these 
+              entities. Guarantee that the data structures contained in state don't themselves contain 
+              logic, reducing the chance that they'll mutate themselves. State will always be 
+              serializable allowing you to store and rehydrate from browser storage mechanisms like 
+              local storage. State can be inspected via the Redux Devtools.
+            Component-store:
+              ComponentStore is a stand-alone library that helps to manage local/component state. 
+              It's an alternative to reactive push-based "Service with a Subject" approach.
+            Router-store:
+              Bindings to connect the Angular Router with Store. During each router navigation cycle, 
+              multiple actions are dispatched that allow you to listen for changes in the router's state. 
+              You can then select data from the state of the router to provide additional information to 
+              your application.
+        Ngxs:
+          Ngxs is a state management pattern for the Angular framework. It acts as a single source of truth 
+          for our application. Ngxs is very simple and easily implementable. It reduce lots of boilerplate 
+          code . It is a replacement for Ngrx. In Ngrx we are creating state, action, reducer, and effects 
+          but in Ngxs, we are creating only state and actions instead of all of this. Like Ngrx, Ngxs is 
+          also asynchronous and when we dispatch any action we can get a response back.
+
+What are “zones” in Angular?
+    A“zone” is a way to persist execution context across asynchronous tasks. Angular uses zones to 
+    enable automatic change detection in response to changes made by asynchronous tasks. For example, 
+    a change fired by some code in a setTimeout is obviously asynchronous, yet Angular will 
+    automatically detect any changes made by that asynchronous code — as long as the setTimeout runs in 
+    the application’s zone (which it does by default).
+
+
+Types of directives:
+    The Structural Directive’s name always starts with an asterisk(*) prefix, whereas Attribute Directive 
+    does not contain any prefix. The three most popular built-in Structural Directives Angular provides 
+    are NgIf, NgFor, and NgSwitch.   
+    Components are directives with templates. The only difference between Components and the other two 
+    types of directives is the Template.  
+    
+    ElementRef which is responsible for accessing the DOM element.
+    TemplateRef represents the embedded template which is used to instantiate the embedded views. These 
+    embedded views are linked to the template which is to be rendered.
+    ViewContainerRef is a container where one or more views can be attached. We can use createEmbeddedView() 
+    function to attach the embedded templates in the container.  
+
+Pipes:
+  Using the PipeTransform interface:
+    Implement the PipeTransform interface in your custom pipe class to perform the transformation.
+    Angular invokes the transform method with the value of a binding as the first argument, and any parameters 
+    as the second argument in list form, and returns the transformed value.
+
+  A pure pipe is a pipe that is run when a pure change is detected. A pure change is a change to a primitive 
+  JavaScript input value like strings, numbers, booleans, symbols or an object reference change.
+  We can create impure pipes to re-render templates when an object’s content like object properties or 
+  array entries change. We set pure to false.
+
+Pure pipes must be pure functions. Pure functions take an input and return an output. They don’t have side effects.
+
+Standalone components:
+  A standalone component is a component that sets standalone: true in its component metadata. 
+  Standalone components directly import other components, directives, and pipes used in their templates:
+  Advantages of Transitioning to Standalone Components:
+    These components function independently, reducing the need for cumbersome NgModules that may contain 
+    unnecessary imports and unused dependencies.
+    This approach not only promotes cleaner and more organized code but also streamlines the development 
+    workflow, making it easier to manage codebase at scale.
+    By importing only the required dependencies, standalone components operate as highly treeshakeable 
+    units within a project, allowing for the elimination of dead code and consequently yield a reduced bundle size. 
+    This leaner, more efficient bundle improves application performance, particularly in the context of loading times—a 
+    critical factor in user experience and retention.
+    In the modular landscape of Angular, embracing standalone components aids maintenance and testing efforts. 
+    As components encapsulate their functionality discreetly, developers can more easily reason about, refactor, and test 
+    individual pieces without the intricacies of a monolithic module system.
+    Moreover, standalone components offer a tactical advantage in the realm of performance optimization. By facilitating 
+    lazy-loading at a component level, they contribute to a more granular control of resource loading. This precision allows 
+    for the runtime to fetch only the components necessary for the current user interaction, as opposed to bulk-loading an entire 
+    module, thereby enhancing application responsiveness and reducing network payload.
+
+    Cons:
+      Migrating to standalone components can introduce new challenges, particularly in large-scale Angular projects where the 
+      complexity of the system can increase significantly. One common pitfall is the mismanagement of dependencies when dealing with 
+      a multitude of components that previously relied on shared modules for their dependencies. This can lead to repetitive imports 
+      and can obscure the clear structure that modules once provided.
+      To mitigate this, developers must exercise careful planning when migrating, ensuring that dependencies are abstracted wherever 
+      possible. One strategy is to group commonly used services or directives into Core or Shared services, which can be easily 
+      imported where needed, without bloating components with redundant code. This way, you maintain clarity in your service dependencies 
+      while leveraging the modularity of standalone components.
+      Another pitfall to be wary of is the temptation to rigidly stick to the principle of one component per file, which can lead to 
+      an overwhelming number of files in your project. While modularity is key, managing a sprawling structure with an excessive 
+      number of discrete files can be detrimental. Striking the right balance can be challenging; however, utilizing pattern such 
+      as the barrelfile pattern for grouping and exporting a collection of components can help keep this under control. It simplifies 
+      imports and keeps related components together without sacrificing the benefits of modularity.
+
+
+Server-side rendering:
+  Server-side rendering (SSR) is a process that involves rendering pages on the server, resulting in initial HTML content which 
+  contains initial page state. Once the HTML content is delivered to a browser, Angular initializes the application and utilizes 
+  the data contained within the HTML.
+  In general, code which relies on browser-specific symbols should only be executed in the browser, not on the server. 
+  This can be enforced through the afterRender and afterNextRender lifecycle hooks. These are only executed on the browser and 
+  skipped on the server.
+  Angular Universal also known as server-side rendering is tool which allows server to pre-render Angular application while user 
+  hits your website for first time.
+
+Angular SSG
+    SSG (Static Site Generator), helps in building the HTML full website, during the process of building and serving that HTML Page. 
+    This method helps to generate the HTML website on the client side before its being served on the server side. Therefore, 
+    whenever a user requests a HTML Page, firstly HTML page will be rendered and secondly, the angular app will be rendered. 
+
+    The SSG can be used only if your website is static (or) it’s content doesn’t changes frequently.
+    the website’s pages are generated at build time, and their contents do not change unless you add new content or components and 
+    then rebuild — you have to rebuild the website if you want it to be updated with the new content.
+    This approach is good for building applications whose content does not change often. So, you wouldn’t necessarily use it for 
+    a website that has to be modified according to the user or one that has a lot of user-generated content. However, a blog or 
+    personal website would be an ideal use.
+    Scully is the best static site generator for Angular projects looking to embrace the Jamstack. It will use your application 
+    and will create a static index. html for each of your pages/routes.
+
+
+      
+
+
+
+

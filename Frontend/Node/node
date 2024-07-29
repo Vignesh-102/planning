@@ -1,0 +1,24 @@
+Node.js is an open-source and cross-platform JavaScript runtime environment.
+    A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
+    Blocking methods execute synchronously and non-blocking methods execute asynchronously.
+
+CommonJS vs ESM:
+    CommonJS and ES (EcmaScript) are module systems used in Node. CommonJS is the default module system. However, a new module system was recently added to NodeJS - ES modules. CommonJS modules use the require() statement for module imports and module.exports for module exports while it’s import and export for ES.
+
+global keyword:
+    In browsers, the top-level scope is the global scope, and its global object is called the window object. Within the browser, var something will define a new global variable inside the window object. In Node.js, this is different. The top-level scope is not the global scope; var something inside a Node.js module will be local to that module.
+
+npx:
+    npx is a very powerful command that’s been available in npm starting version 5.2, released in July 2017. If you don’t want to install npm, you can install npx as a standalone package. npx lets you run code built with Node.js and published through the npm registry, without needing to install the package itself. This is particularly useful for trying out new tools, running one-time commands, or using packages in shared environments where global installations are undesirable. npx takes care of downloading the package on-the-fly, running the desired command, and then cleaning up the temporary installation. This keeps your project’s dependencies lean and avoids version conflicts.
+
+npm:
+    npm is the standard package manager for Node.js.
+    It is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day
+
+Stack Trace:
+    The stack trace is used to trace the active stack frames at a particular instance during the execution of a program. The stack trace is useful while debugging code as it shows the exact point that has caused an error.
+    stack property contains the string version of the stack trace.
+    stack property contains a stack trace of a method called trace in LIFO order.
+
+Using debugger:
+    Node.js includes a command-line debugging utility. The Node.js debugger client is not a full-featured debugger, but simple stepping and inspection are possible. To use it, start Node.js with the inspect argument followed by the path to the script to debug.    

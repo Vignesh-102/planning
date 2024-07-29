@@ -1,0 +1,48 @@
+Typescript
+
+   Topic 1: Structural Typing
+
+       structural vs nominal type systems: 
+           structural : two types are same if they have same structures
+           nominal: two types are same if they have same names
+
+   Topic 2: implements(not available in js) vs extends(inheritance, available in js also)
+
+   Topic 3: Type annotations -> let a: number = 2;
+            Type Inference -> let a = 3;
+
+            Type annotations involve explicitly specifying the type of a parameter or variable,
+            while type inference occurs when TypeScript automatically determines the type based 
+            on the implementation.
+
+            When to use annotation and Inference is straightforward. 
+            You should use Inference most of the time.There are only a few cases 
+            where Inference comes short, and it is impossible to determine a type.
+
+            Most of the time, you do not need to worry about writing annotations manually, 
+            except the cases where unknown return values come from functions or variables 
+            must be declared before the initialisation.
+
+   Topic 4: Type Guards -> A type guard is a TypeScript technique used to 
+            get information about the type of a variable, 
+            usually within a conditional block
+
+            ('in', 'instance of', 'typeof')
+            The instanceof operator tests to see if the prototype property of a constructor 
+            appears anywhere in the prototype chain of an object.
+
+   Topic 5: Symbols ->  used to represent unique values that can be used as identifiers or 
+            keys in objects. They are also used to create private properties 
+            and methods in classes.
+            Symbols are created using the Symbol() function. The function takes an optional string parameter,
+            which can be used to give the Symbol a description.
+            A global Symbol can be created by passing in an object with a 'global' property set to true.
+            Constants are created by passing in an object with a 'constant' property set to true.
+
+    Type narrowing:
+        Type narrowing is a process of refining or narrowing down the type using certain conditions 
+        with a particular code block.
+
+
+
+

@@ -1,0 +1,43 @@
+observables:
+     A stream is a sequence of data ordered in time. Data streams can be created with anything 
+     like variables, changes on a variable, properties, user inputs, data structures, click events, 
+     HTTP requests, etc. An observable is a function that acts as a wrapper for a data stream.
+     There are 4 stages for a life cycle of an observable.
+       Creation
+       Subscription
+       Execution
+       Destruction
+
+RXjs vs promises:
+    Callbacks can be difficult to manage when working with many async operations or when those 
+    operations are nested into each other. 
+    “The Promise object represents the eventual completion (or failure) of an asynchronous operation 
+    and its resulting value“, MDN. However, a promise can only handle one single value and it is not 
+    cancellable. While Promises return one value, Observables can provide more than one. 
+    “This makes observables useful for getting multiple values over time“.While Promises execute on 
+    creation, Observables won’t start to execute until we want them to start. To invoke an Observable 
+    and get one or more values we need to subscribe to it. Observables are lazy, Promises are not.
+
+operators:
+    of        -> make observable from a string or array or an object.
+    from      -> create an observable from an array, an array-like object, a promise, an iterable object, 
+                 or an observable-like object.
+    tap       -> Used to perform side-effects for notifications from the source observable.
+    switchMap -> Projects each source value to an Observable which is merged in the output Observable, 
+                 emitting values only from the most recently projected Observable.
+    concatMap -> Projects each source value to an Observable which is merged in the output Observable, in a 
+                 serialized fashion waiting for each one to complete before merging the next.
+    mergeMap  -> Projects each source value to an Observable which is merged in the output Observable.
+    interval  -> Creates an Observable that emits sequential numbers every specified interval of time, 
+                 on a specified SchedulerLike.
+    exhaustMap -> Projects each source value to an Observable which is merged in the output Observable 
+                  only if the previous projected Observable has completed.
+    combineLatest -> When any observable emits a value, emit the last emitted value from each.
+    startsWith -> Returns an observable that, at the moment of subscription, will synchronously emit all 
+                  values provided to this operator, then subscribe to the source and mirror all of its 
+                  emissions to subscribers.
+    debounceTime -> Emits a notification from the source Observable only after a particular time span 
+                    has passed without another source emission.
+    distinctUntilChanged -> Only emit when the current value is different than the last.
+    catchError -> Catches errors on the observable to be handled by returning a new observable or 
+                  throwing an error.

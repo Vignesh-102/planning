@@ -1,0 +1,32 @@
+REACT
+
+    Topic 1: Routing 
+        import {
+          Routes,
+          Route,
+          useNavigate
+        } from "react-router-dom";
+
+      react router will first match the specific route and then then dynamic ones.
+      Index Routes
+      Lazy loading Routes
+      params
+      search params - query strings
+      gaurded Routes
+
+    Topic 2: replace: true  in useNavigate()
+       It's a redirect, replacing the current entry in the history stack versus 
+       PUSHing a new entry onto the top like a regular navigation.
+
+       eg. after login page, we will replace so that on click of back button 
+       will not go to loginpage after logged in
+       
+    Topic 3: Hooks
+      React Hooks are simple JavaScript functions that we can use to 
+      isolate the reusable part from a functional component.
+      
+    Topi 4: state
+      Unlike normal variables, state variables trigger a re-render of the component whenever 
+      their value changes. This dynamic behavior enables React components to return 
+      active data updates and provide an ideal user experience
+    
